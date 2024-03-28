@@ -1,4 +1,4 @@
-FROM ubuntu:latest
-LABEL authors="ironfeast"
-
-ENTRYPOINT ["top", "-b"]
+FROM eclipse-temurin:17
+WORKDIR /home
+COPY ./target/beta1-0.0.1-SNAPSHOT.jar primes-service.jar
+ENTRYPOINT ["java", "-jar", "primes-service.jar"]
